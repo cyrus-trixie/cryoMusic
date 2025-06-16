@@ -19,7 +19,6 @@ export default function Card() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Update progress
     const handleTimeUpdate = () => setProgress(audio.currentTime);
     const handleLoadedMetadata = () => setDuration(audio.duration);
     const handleEnded = () => nextSong();
@@ -105,11 +104,22 @@ export default function Card() {
 
   return (
     <>
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-b from-black to-neutral-900 py-10 px-4 text-center text-white max-w-3xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+          Discover Artists in Seconds 🎧
+        </h1>
+        <p className="text-gray-400 text-lg md:text-xl">
+          Instantly preview an artist’s songs with 30-second clips. No sign-ups. No distractions. 
+          Just pure vibes to help you decide who belongs on your playlist.
+        </p>
+      </div>
+
       {/* Search Bar */}
       <div className="flex items-center space-x-2 bg-[#1e1e1e] p-3 rounded-xl max-w-md mx-auto mt-6 shadow-lg">
         <input
           type="text"
-          placeholder="Search for a song..."
+          placeholder="Search for an artist..."
           className="flex-1 bg-transparent text-white placeholder-gray-400 outline-none"
           onChange={(e) => setTrackInput(e.target.value)}
         />
@@ -154,6 +164,11 @@ export default function Card() {
           ></div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="text-center text-gray-500 text-sm mt-12 mb-6">
+        Built with ❤️ by Cyrus — Powered by Deezer API
+      </footer>
     </>
   );
 }
