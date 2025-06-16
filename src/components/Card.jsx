@@ -36,7 +36,7 @@ export default function Card() {
   }, [audioRef.current]);
 
   function fetchSongs(query) {
-    fetch(`https://cryomusic.onrender.com/api/search?q=${query}`)
+    fetch(`https://cyromusic.onrender.com/api/search?q=${query}`)
       .then((res) => res.json())
       .then((data) => {
         setSongList(data.data);
