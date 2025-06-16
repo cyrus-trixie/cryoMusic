@@ -20,12 +20,10 @@ app.use(cors({
 }));
 // --- END CORS CONFIG ---
 
-// Optional: parse JSON body if you ever use POST
-app.use(express.json());
 
-// POST endpoint (not used yet but ready)
-app.post('/api/postdata', (req, res) => {
-  res.status(200).json({ message: 'POST request received' });
+
+app.get('/', (req, res) => {
+  res.send('✅ API IS UP');
 });
 
 // Main search endpoint
